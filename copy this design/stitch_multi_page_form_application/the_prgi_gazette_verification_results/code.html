@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRGI Title Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Domine:wght@400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#ffdad5",
+                "inverse-on-surface": "#f2f0f0",
+                "on-secondary-fixed-variant": "#8e130c",
+                "outline-variant": "#c4c7c7",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#e5e2e1",
+                "tertiary-container": "#1c1b1a",
+                "on-tertiary-fixed-variant": "#484645",
+                "inverse-surface": "#303030",
+                "secondary": "#b02d21",
+                "inverse-primary": "#c8c6c5",
+                "on-tertiary-fixed": "#1c1b1a",
+                "surface-container-highest": "#e4e2e2",
+                "tertiary-fixed": "#e6e2df",
+                "on-primary-fixed-variant": "#474746",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#868382",
+                "tertiary": "#000000",
+                "on-primary-container": "#858383",
+                "surface-bright": "#fbf9f8",
+                "surface-container-low": "#f5f3f3",
+                "primary": "#000000",
+                "secondary-container": "#fc6451",
+                "on-background": "#1b1c1c",
+                "on-surface-variant": "#444748",
+                "surface": "#fbf9f8",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#650001",
+                "tertiary-fixed-dim": "#cac6c4",
+                "on-primary": "#ffffff",
+                "surface-container": "#efeded",
+                "primary-fixed-dim": "#c8c6c5",
+                "surface-variant": "#e4e2e2",
+                "surface-container-high": "#eae8e7",
+                "surface-dim": "#dbd9d9",
+                "outline": "#747878",
+                "primary-container": "#1c1b1b",
+                "background": "#fbf9f8",
+                "secondary-fixed-dim": "#ffb4a9",
+                "error-container": "#ffdad6",
+                "surface-tint": "#5f5e5e",
+                "on-surface": "#1b1c1c",
+                "on-secondary-fixed": "#410000",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#1c1b1b",
+                "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0px",
+                "lg": "0px",
+                "xl": "0px",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "48px",
+                "column-width": "calc((100% - (11 * 24px)) / 12)",
+                "margin-mobile": "16px",
+                "rule-thin": "1px",
+                "rule-thick": "4px",
+                "stack-md": "16px",
+                "container-max": "1200px",
+                "stack-sm": "8px",
+                "stack-lg": "32px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Domine"
+                ],
+                "body-md": [
+                        "\"Source Serif 4\""
+                ],
+                "headline-lg-mobile": [
+                        "Domine"
+                ],
+                "body-lg": [
+                        "\"Source Serif 4\""
+                ],
+                "masthead": [
+                        "Domine"
+                ],
+                "label-caps": [
+                        "Archivo Narrow"
+                ],
+                "headline-sm": [
+                        "Domine"
+                ],
+                "body-sm": [
+                        "\"Source Serif 4\""
+                ],
+                "headline-md": [
+                        "Domine"
+                ],
+                "data-mono": [
+                        "JetBrains Mono"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "masthead": [
+                        "84px",
+                        {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "900"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "38px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "data-mono": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    .paper-texture {
+        background-color: #fbf9f8;
+        background-image: 
+            linear-gradient(90deg, transparent 99%, rgba(0,0,0,0.02) 100%),
+            linear-gradient(0deg, transparent 99%, rgba(0,0,0,0.02) 100%);
+        background-size: 20px 20px;
+    }
+</style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full pt-8 pb-4 border-b-rule-thick border-primary dark:border-on-background bg-background dark:bg-background max-w-[1440px] mx-auto px-margin-desktop flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div class="font-masthead text-masthead text-primary dark:text-on-background uppercase tracking-tighter leading-none hidden md:block">The PRGI Gazette</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-on-background uppercase tracking-tighter leading-none md:hidden">The PRGI Gazette</div>
+<div class="flex gap-4 items-center">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 uppercase hover:bg-secondary transition-colors">LOG IN</button>
+</div>
+</div>
+<nav class="flex gap-8 items-center border-t border-primary pt-4 overflow-x-auto whitespace-nowrap">
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-container font-bold border-b-2 border-secondary uppercase pb-1" href="#">Verification</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background hover:text-secondary uppercase transition-colors duration-200" href="#">Latest News</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background hover:text-secondary uppercase transition-colors duration-200" href="#">Public Records</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background hover:text-secondary uppercase transition-colors duration-200" href="#">Editorials</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-background hover:text-secondary uppercase transition-colors duration-200" href="#">Archives</a>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-stack-lg md:grid md:grid-cols-12 gap-gutter">
+<!-- Left Column: Form & Info -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-stack-lg">
+<section class="flex flex-col gap-stack-md">
+<h1 class="text-headline-lg font-headline-lg text-primary border-b-rule-thick border-primary pb-2">PRGI Title Verification</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant italic">
+                    Automated preliminary assessment of a proposed publication title against the locally imported PRGI corpus and pending applications.
+                </p>
+<div class="bg-surface-container-high border-l-4 border-outline p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline">warning</span>
+<p class="text-body-md font-body-md text-on-surface">
+                        This is an automated preliminary assessment, not official PRGI title verification. Final verification remains PRGI's responsibility.
+                    </p>
+</div>
+</section>
+<!-- Input Form Card -->
+<section class="bg-surface border border-outline p-6 flex flex-col gap-stack-md">
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-primary uppercase tracking-widest border-b border-outline pb-1 mb-1">Proposed title <span class="text-secondary">*</span></label>
+<input class="w-full border border-outline px-4 py-2 text-headline-sm font-headline-sm focus:outline-none focus:ring-1 focus:ring-primary bg-surface-bright" type="text" value="Navajyoti Learning Review"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-primary uppercase tracking-widest border-b border-outline pb-1 mb-1">Language</label>
+<input class="w-full border border-outline px-4 py-2 text-body-md font-body-md bg-surface-bright" type="text" value="English"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-primary uppercase tracking-widest border-b border-outline pb-1 mb-1">State</label>
+<input class="w-full border border-outline px-4 py-2 text-body-md font-body-md bg-surface-bright" type="text" value="Telangana"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-primary uppercase tracking-widest border-b border-outline pb-1 mb-1">Periodicity</label>
+<input class="w-full border border-outline px-4 py-2 text-body-md font-body-md bg-surface-bright" type="text" value="Weekly"/>
+</div>
+</div>
+<div class="flex gap-4 mt-4 border-t border-outline pt-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 uppercase hover:bg-tertiary-container transition-colors flex items-center justify-center min-w-[100px]">Verify</button>
+<button class="border border-primary text-primary font-label-caps text-label-caps px-6 py-2 uppercase hover:bg-surface-container transition-colors flex items-center justify-center">Register as pending</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Results Dashboard -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-stack-lg">
+<section class="paper-texture border border-outline p-6 flex flex-col gap-stack-md relative overflow-hidden shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+<div class="border-b-rule-thick border-primary pb-4 mb-2">
+<h2 class="text-label-caps font-label-caps text-primary uppercase tracking-widest mb-4">Verification Report</h2>
+<div class="flex items-center gap-4 relative z-10">
+<span class="bg-secondary text-on-secondary text-label-caps font-label-caps px-3 py-1 rounded-sm uppercase tracking-widest">REVIEW</span>
+<span class="text-headline-lg font-headline-lg text-primary">57.22%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative z-10 border-b border-outline pb-4">
+<div class="flex justify-between items-baseline">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Closest conflict</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tight">NAVAJYOTI</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Closest match status</span>
+<span class="text-label-caps font-label-caps font-bold text-primary uppercase border border-primary px-2 py-0.5">registered</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 relative z-10 mt-2">
+<h3 class="text-label-caps font-label-caps text-primary uppercase tracking-widest border-b border-primary pb-1">Similarity breakdown (Financial Data)</h3>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-primary text-label-caps font-label-caps text-on-surface-variant uppercase">
+<th class="py-2 font-normal">Metric</th>
+<th class="py-2 font-normal text-right">Value</th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-body-sm">
+<tr class="border-b border-outline">
+<td class="py-2">Edit similarity</td>
+<td class="py-2 text-right">0.6672</td>
+</tr>
+<tr class="border-b border-outline">
+<td class="py-2">Phonetic similarity</td>
+<td class="py-2 text-right">0.0000</td>
+</tr>
+<tr class="border-b border-outline">
+<td class="py-2">Semantic similarity</td>
+<td class="py-2 text-right">0.4857</td>
+</tr>
+<tr class="border-b-rule-thick border-primary bg-surface-container-high font-bold">
+<td class="py-2 px-2 uppercase text-primary font-label-caps">Combined similarity</td>
+<td class="py-2 px-2 text-right text-primary">0.4278</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="group mt-4 relative z-10 border-t border-outline pt-2">
+<summary class="flex items-center gap-2 cursor-pointer text-primary font-label-caps text-label-caps uppercase tracking-widest select-none outline-none hover:text-secondary">
+<span class="material-symbols-outlined text-[16px] transition-transform group-open:rotate-180">arrow_drop_down</span>
+                        Technical details
+                    </summary>
+<div class="flex flex-col gap-2 mt-3 pl-6 border-l border-outline ml-2">
+<div class="flex justify-between">
+<span class="text-body-sm font-body-sm text-on-surface-variant italic">Candidates compared</span>
+<span class="text-data-mono font-data-mono text-primary">37</span>
+</div>
+<div class="flex justify-between">
+<span class="text-body-sm font-body-sm text-on-surface-variant italic">Served from cache</span>
+<span class="text-data-mono font-data-mono text-primary">no</span>
+</div>
+</div>
+</details>
+<div class="border border-outline p-3 mt-4 flex items-start gap-2 relative z-10 bg-surface">
+<span class="material-symbols-outlined text-outline text-[18px]">info</span>
+<p class="text-[12px] font-body-md text-on-surface-variant leading-tight italic">This is an automated preliminary assessment, not official PRGI title verification.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-12 py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-primary-container dark:bg-surface-container-lowest border-t-rule-thick border-primary dark:border-on-background">
+<div class="max-w-container-max mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-body-sm font-body-sm text-on-primary-container dark:text-on-surface">© 2024 The PRGI Gazette. For institutional use only. Verification Edition.</span>
+<div class="flex gap-6">
+<a class="text-label-caps font-label-caps text-on-primary-container/80 dark:text-on-surface/80 hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-200 uppercase" href="#">Privacy Policy</a>
+<a class="text-label-caps font-label-caps text-on-primary-container/80 dark:text-on-surface/80 hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-200 uppercase" href="#">Terms of Service</a>
+<a class="text-label-caps font-label-caps text-on-primary-container/80 dark:text-on-surface/80 hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-200 uppercase" href="#">User Manual</a>
+<a class="text-label-caps font-label-caps text-on-primary-container/80 dark:text-on-surface/80 hover:text-secondary-container dark:hover:text-secondary transition-opacity duration-200 uppercase" href="#">Feedback</a>
+</div>
+</div>
+</footer>
+</body></html>
