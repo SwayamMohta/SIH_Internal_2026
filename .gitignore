@@ -64,4 +64,8 @@ Desktop.ini
 .gemini/
 scratch/
 rules.md
-copy this design
+copy this design/
+
+# Scrapper intermediate data
+scrapper/prgi_chunks/
+scrapper/prgi_chunks_test/

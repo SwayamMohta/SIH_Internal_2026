@@ -1,0 +1,19 @@
+{
+  "name": "sih",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node scrape-prgi.js",
+    "scrape:80k": "powershell -NoProfile -Command \"$env:MAX_PAGES=160; node scrape-prgi.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "csv-parse": "^7.0.2",
+    "csv-stringify": "^6.8.3",
+    "playwright": "^1.62.1"
+  }
+}
