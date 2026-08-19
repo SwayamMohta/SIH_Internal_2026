@@ -7,18 +7,36 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies & Build
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Environment variables
+.env
+.env*.local
+
+# Cache and Coverage
+.cache
+.vite
+coverage
+.eslintcache
+
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Custom ignore rules
+.agents
+copy this design
+
