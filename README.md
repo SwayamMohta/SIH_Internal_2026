@@ -4,7 +4,7 @@ An intelligent, local-first decision-support platform that verifies proposed per
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The system consists of three main components:
 
@@ -14,7 +14,7 @@ The system consists of three main components:
 
 ---
 
-## ⚡ Quick Start (Step-by-Step Instructions)
+## Quick Start (Step-by-Step Instructions)
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -56,7 +56,7 @@ The system consists of three main components:
    ```bash
    python app.py
    ```
-   > 🟢 **Backend API will run at**: `http://127.0.0.1:5000`
+   > **Backend API will run at**: `http://127.0.0.1:5000`
 
 ---
 
@@ -76,13 +76,13 @@ The system consists of three main components:
    ```bash
    npm run dev
    ```
-   > 🟢 **Web Application will run at**: `http://localhost:5173`
+   > **Web Application will run at**: `http://localhost:5173`
 
 ---
 
-## 🛠️ Detailed Component Usage & CLI Tools
+## Detailed Component Usage & CLI Tools
 
-### 📦 Backend (`backend/`)
+### Backend (`backend/`)
 
 #### 1. CLI Title Verification
 Verify a proposed title directly from the command line without starting the web server:
@@ -110,7 +110,7 @@ python -m pytest -q
 
 ---
 
-### 🎨 Frontend (`frontend/`)
+### Frontend (`frontend/`)
 
 - **Development Server**: `npm run dev` (starts dev server at `http://localhost:5173`)
 - **Production Build**: `npm run build` (compiles TypeScript & outputs to `dist/`)
@@ -118,7 +118,7 @@ python -m pytest -q
 
 ---
 
-### 🕷️ Data Scrapper (`scrapper/`)
+### Data Scrapper (`scrapper/`)
 
 Extract registered publication titles directly from the PRGI portal using Playwright:
 
@@ -138,7 +138,7 @@ Extract registered publication titles directly from the PRGI portal using Playwr
 
 ---
 
-## 📡 API Endpoints Summary
+## API Endpoints Summary
 
 | Endpoint | Method | Description |
 |---|---|---|
@@ -148,7 +148,7 @@ Extract registered publication titles directly from the PRGI portal using Playwr
 
 ---
 
-## ❓ Troubleshooting & FAQs
+## Troubleshooting & FAQs
 
 ### Port 5000 Already in Use
 If `python app.py` exits immediately or fails to bind to port `5000`:
@@ -163,7 +163,7 @@ If `python app.py` exits immediately or fails to bind to port `5000`:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 SIH_Demo/
@@ -186,5 +186,5 @@ SIH_Demo/
 
 ---
 
-## 📜 Disclaimer
+## Disclaimer
 This system provides an automated *preliminary* decision-support assessment. Final verification and official approval of any publication title remain the sole responsibility of the Press Registrar General of India (PRGI).
