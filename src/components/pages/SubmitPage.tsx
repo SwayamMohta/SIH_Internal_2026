@@ -144,115 +144,102 @@ export const SubmitPage: React.FC<SubmitPageProps> = ({ onVerify, onBack }) => {
           {/* TAB 1: Title Verification */}
           {activeTab === 'verify' && (
             <>
-              <section style={{ borderBottom: '2px solid var(--color-primary)', paddingBottom: '16px', flexShrink: 0 }}>
-                <h1 className="gazette-headline-lg" style={{ color: 'var(--color-primary)', margin: '0 0 6px 0' }}>
-                  PRGI Title Verification
+              <section style={{ borderBottom: '2px solid var(--color-primary)', paddingBottom: '14px', flexShrink: 0 }}>
+                <h1 className="gazette-headline-lg" style={{ color: 'var(--color-primary)', margin: '0 0 6px 0', fontSize: '32px' }}>
+                  Title Verification Request
                 </h1>
-                <p className="gazette-body-lg" style={{ color: 'var(--color-on-surface-variant)', fontStyle: 'italic', margin: 0 }}>
-                  Automated preliminary assessment against the locally imported PRGI corpus and pending applications.
+                <p className="gazette-body-md" style={{ color: 'var(--color-on-surface-variant)', margin: 0 }}>
+                  Fill in the publication details below to check title availability against the PRGI database.
                 </p>
               </section>
 
-              {/* Form fields */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', flex: 1 }}>
+              {/* Form Card Container */}
+              <div className="gazette-form-card" style={{ marginTop: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', borderBottom: '1px solid var(--color-outline-variant)', paddingBottom: '14px' }}>
+                  <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: '18px', margin: 0, color: 'var(--color-primary)' }}>
+                    Publication Metadata
+                  </h2>
+                  <span style={{ fontSize: '13px', color: 'var(--color-on-surface-variant)' }}>
+                    All fields marked with an asterisk (<span className="gazette-field-required">*</span>) are required.
+                  </span>
+                </div>
 
-                {/* Title input */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  <label className="gazette-label-caps" htmlFor="proposed-title" style={{
-                    color: 'var(--color-on-surface)',
-                    borderBottom: '1px solid var(--color-outline-variant)',
-                    paddingBottom: '4px',
-                  }}>
-                    Proposed title <span style={{ color: 'var(--color-secondary)' }}>*</span>
+                {/* Proposed Title Input */}
+                <div className="gazette-field-group">
+                  <label className="gazette-field-label" htmlFor="proposed-title">
+                    Proposed Publication Title <span className="gazette-field-required">*</span>
                   </label>
                   <input
                     id="proposed-title"
+                    className="gazette-input-field"
                     type="text"
                     value={title}
                     onChange={e => setTitle(e.target.value)}
-                    placeholder="Enter proposed title..."
+                    placeholder="e.g. The Deccan Times"
                     autoFocus
-                    style={{
-                      width: '100%',
-                      border: 'none',
-                      borderBottom: '1px solid var(--color-primary)',
-                      background: 'transparent',
-                      padding: '6px 0',
-                      fontFamily: 'var(--font-headline)',
-                      fontSize: '22px',
-                      fontWeight: '700',
-                      color: 'var(--color-primary)',
-                      outline: 'none',
-                      borderRadius: 0,
-                      transition: 'border-color 0.2s',
-                    }}
-                    onFocus={e => (e.target as HTMLInputElement).style.borderBottomColor = 'var(--color-secondary)'}
-                    onBlur={e => (e.target as HTMLInputElement).style.borderBottomColor = 'var(--color-primary)'}
+                    style={{ fontSize: '18px', fontWeight: '600' }}
                   />
                   {normalized && (
-                    <span className="gazette-body-sm" style={{ color: 'var(--color-on-surface-variant)', fontStyle: 'italic', fontSize: '11px' }}>
-                      Normalized: {normalized}
+                    <span className="gazette-body-sm" style={{ color: 'var(--color-on-surface-variant)', fontSize: '12px' }}>
+                      Cleaned search query: <strong>{normalized}</strong>
                     </span>
                   )}
                 </div>
 
-                {/* Three selects */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
+                {/* Dropdown Selects */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
                   {[
-                    { id: 'language', label: 'Language', value: language, set: setLanguage, opts: ['English', 'Hindi', 'Telugu', 'Marathi', 'Tamil', 'Kannada'] },
-                    { id: 'state', label: 'State', value: state, set: setState, opts: ['Telangana', 'Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'Uttar Pradesh'] },
-                    { id: 'periodicity', label: 'Periodicity', value: periodicity, set: setPeriodicity, opts: ['Weekly', 'Daily', 'Monthly', 'Fortnightly', 'Quarterly'] },
+                    { id: 'language', label: 'Publication Language', value: language, set: setLanguage, opts: ['English', 'Hindi', 'Telugu', 'Marathi', 'Tamil', 'Kannada'] },
+                    { id: 'state', label: 'Registration State', value: state, set: setState, opts: ['Telangana', 'Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'Uttar Pradesh'] },
+                    { id: 'periodicity', label: 'Publication Frequency', value: periodicity, set: setPeriodicity, opts: ['Weekly', 'Daily', 'Monthly', 'Fortnightly', 'Quarterly'] },
                   ].map(field => (
-                    <div key={field.id} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                      <label className="gazette-label-caps" htmlFor={field.id} style={{
-                        color: 'var(--color-on-surface)',
-                        borderBottom: '1px solid var(--color-outline-variant)',
-                        paddingBottom: '4px',
-                      }}>
-                        {field.label}
+                    <div key={field.id} className="gazette-field-group">
+                      <label className="gazette-field-label" htmlFor={field.id}>
+                        {field.label} <span className="gazette-field-required">*</span>
                       </label>
-                      <select
-                        id={field.id}
-                        value={field.value}
-                        onChange={e => field.set(e.target.value)}
-                        style={{
-                          width: '100%',
-                          border: 'none',
-                          borderBottom: '1px solid var(--color-primary)',
-                          background: 'transparent',
-                          padding: '6px 0',
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '16px',
-                          color: 'var(--color-primary)',
-                          outline: 'none',
-                          borderRadius: 0,
-                          appearance: 'none',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        {field.opts.map(o => <option key={o}>{o}</option>)}
-                      </select>
+                      <div className="gazette-select-wrapper">
+                        <select
+                          id={field.id}
+                          className="gazette-select-field"
+                          value={field.value}
+                          onChange={e => field.set(e.target.value)}
+                        >
+                          {field.opts.map(o => <option key={o}>{o}</option>)}
+                        </select>
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Action buttons */}
+                {/* Action Buttons */}
                 <div style={{
                   display: 'flex',
                   gap: '14px',
+                  alignItems: 'center',
                   paddingTop: '16px',
-                  borderTop: '1px dashed var(--color-outline-variant)',
+                  borderTop: '1px solid var(--color-outline-variant)',
+                  marginTop: '8px',
                 }}>
                   <button
                     id="verify-btn"
                     className="btn-gazette-red"
                     onClick={handleVerify}
                     disabled={!title.trim()}
-                    style={{ opacity: title.trim() ? 1 : 0.45, cursor: title.trim() ? 'pointer' : 'not-allowed', borderRadius: '6px' }}
+                    style={{
+                      opacity: title.trim() ? 1 : 0.5,
+                      cursor: title.trim() ? 'pointer' : 'not-allowed',
+                      borderRadius: '6px',
+                      padding: '12px 28px',
+                    }}
                   >
-                    Verify Title
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>search</span>
+                    Verify Title Availability
                   </button>
-                  <button className="btn-gazette-outline" onClick={onBack} style={{ borderRadius: '6px' }}>
+                  <button
+                    className="btn-gazette-outline"
+                    onClick={onBack}
+                    style={{ borderRadius: '6px', padding: '12px 24px' }}
+                  >
                     Back to Home
                   </button>
                 </div>
