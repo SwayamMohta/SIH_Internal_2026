@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRGI Title Verification — Preliminary Assessor</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>PRGI Title Verification</h1>
+      <p class="subtitle">
+        Automated preliminary assessment of a proposed publication title against
+        the locally imported PRGI corpus and pending applications.
+      </p>
+      <p class="disclaimer-banner">
+        ⚠️ This is an automated preliminary assessment, not official PRGI title
+        verification. Final verification remains PRGI's responsibility.
+      </p>
+    </header>
+
+    <section class="card">
+      <label for="title">Proposed title <span class="req">*</span></label>
+      <input id="title" type="text" placeholder="e.g. Daily Samachar Patrika"
+             autocomplete="off">
+
+      <div class="optional-row">
+        <div>
+          <label for="language">Language</label>
+          <input id="language" type="text" placeholder="English">
+        </div>
+        <div>
+          <label for="state">State</label>
+          <input id="state" type="text" placeholder="Telangana">
+        </div>
+        <div>
+          <label for="periodicity">Periodicity</label>
+          <input id="periodicity" type="text" placeholder="Weekly">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="verify-btn" type="button">Verify</button>
+        <button id="pending-btn" type="button" class="secondary" hidden>
+          Register as pending
+        </button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="result" class="card" hidden>
+      <div class="result-head">
+        <span id="status-badge" class="badge">—</span>
+        <span id="probability" class="probability">—</span>
+      </div>
+      <ul id="reasons" class="reasons"></ul>
+
+      <div class="detail">
+        <div><span class="k">Nearest conflicts</span><span id="closest" class="v">—</span></div>
+        <div><span class="k">Closest match status</span><span id="closest-status" class="v">—</span></div>
+      </div>
+
+      <table id="breakdown" class="breakdown" hidden>
+        <caption>Similarity breakdown</caption>
+        <tbody>
+          <tr><th>Edit similarity</th><td id="b-edit">—</td></tr>
+          <tr><th>Phonetic similarity</th><td id="b-phonetic">—</td></tr>
+          <tr><th>Semantic similarity</th><td id="b-semantic">—</td></tr>
+          <tr><th>Combined similarity</th><td id="b-combined">—</td></tr>
+        </tbody>
+      </table>
+
+      <details class="technical">
+        <summary>Technical details</summary>
+        <div><span class="k">Candidates compared</span><span id="candidate-count" class="v">—</span></div>
+        <div><span class="k">Served from cache</span><span id="from-cache" class="v">—</span></div>
+      </details>
+
+      <p class="disclaimer-banner small">
+        ⚠️ This is an automated preliminary assessment, not official PRGI title verification.
+      </p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
