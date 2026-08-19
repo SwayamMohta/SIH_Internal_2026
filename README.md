@@ -14,7 +14,7 @@ The system consists of three main components:
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Quick Start (Step-by-Step Instructions)
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -25,27 +25,44 @@ The system consists of three main components:
 
 ### Step 1: Run the Backend Service
 
-1. Open a terminal and navigate to the `backend` folder:
+1. Open your terminal and navigate to the `backend` folder:
    ```bash
    cd backend
    ```
 
-2. Install Python dependencies:
+2. Create and activate a Python virtual environment:
+   - **Windows (PowerShell)**:
+     ```powershell
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
+     ```
+   - **Windows (Command Prompt)**:
+     ```cmd
+     python -m venv venv
+     .\venv\Scripts\activate.bat
+     ```
+   - **macOS / Linux**:
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+
+3. Install required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Start the Flask backend server:
+4. Start the Flask API server:
    ```bash
    python app.py
    ```
-   > The API server will start at **`http://127.0.0.1:5000`**.
+   > 🟢 **Backend API will run at**: `http://127.0.0.1:5000`
 
 ---
 
 ### Step 2: Run the Frontend Application
 
-1. Open a second terminal and navigate to the `frontend` folder:
+1. Open a **new terminal window** and navigate to the `frontend` folder:
    ```bash
    cd frontend
    ```
@@ -59,23 +76,23 @@ The system consists of three main components:
    ```bash
    npm run dev
    ```
-   > Access the Web UI in your browser at **`http://localhost:5173`**.
+   > 🟢 **Web Application will run at**: `http://localhost:5173`
 
 ---
 
-## 🛠️ Detailed Component Usage
+## 🛠️ Detailed Component Usage & CLI Tools
 
 ### 📦 Backend (`backend/`)
 
-#### 1. Test a Title via CLI
-You can run title verification directly from your command line without starting the web server:
+#### 1. CLI Title Verification
+Verify a proposed title directly from the command line without starting the web server:
 ```bash
 cd backend
 python -m src.verify "Daily Samachar"
 ```
 
 #### 2. Re-ingest / Reset Corpus Database
-If you modify `data/prgi_titles.csv` or want to rebuild the SQLite database from scratch:
+Rebuild the local SQLite corpus database from `data/prgi_titles.csv`:
 ```bash
 python -m src.ingest --csv data/prgi_titles.csv --reset
 ```
@@ -95,26 +112,26 @@ python -m pytest -q
 
 ### 🎨 Frontend (`frontend/`)
 
-- **Development Mode**: `npm run dev` (starts dev server with hot module replacement)
-- **Production Build**: `npm run build` (compiles TypeScript & bundles into `dist/`)
+- **Development Server**: `npm run dev` (starts dev server at `http://localhost:5173`)
+- **Production Build**: `npm run build` (compiles TypeScript & outputs to `dist/`)
 - **Preview Production**: `npm run preview`
 
 ---
 
 ### 🕷️ Data Scrapper (`scrapper/`)
 
-The scraper automatically extracts registered publication titles from the PRGI portal using Playwright.
+Extract registered publication titles directly from the PRGI portal using Playwright:
 
 1. Navigate to the `scrapper` directory:
    ```bash
    cd scrapper
    ```
-2. Install dependencies:
+2. Install dependencies & browser binaries:
    ```bash
    npm install
    npx playwright install chromium
    ```
-3. Run scraper:
+3. Run the scraper script:
    ```bash
    npm run scrape
    ```
@@ -131,11 +148,26 @@ The scraper automatically extracts registered publication titles from the PRGI p
 
 ---
 
+## ❓ Troubleshooting & FAQs
+
+### Port 5000 Already in Use
+If `python app.py` exits immediately or fails to bind to port `5000`:
+- **Windows (PowerShell)**: Find and stop the process using port 5000:
+  ```powershell
+  Get-Process -Id (Get-NetTCPConnection -LocalPort 5000).OwningProcess | Stop-Process -Force
+  ```
+- **macOS / Linux**:
+  ```bash
+  lsof -ti:5000 | xargs kill -9
+  ```
+
+---
+
 ## 📁 Repository Structure
 
 ```
 SIH_Demo/
-├── backend/                  # Python Flask API & Title Engine
+├── backend/                  # Python Flask API & Title Verification Engine
 │   ├── app.py                # Flask Server entrypoint
 │   ├── data/                 # SQLite database & CSV corpus
 │   ├── src/                  # Core verification engine (phonetics, similarity, ML)
